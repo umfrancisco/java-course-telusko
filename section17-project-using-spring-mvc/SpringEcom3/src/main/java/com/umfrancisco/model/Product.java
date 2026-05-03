@@ -9,8 +9,6 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
 public class Product {
 	
