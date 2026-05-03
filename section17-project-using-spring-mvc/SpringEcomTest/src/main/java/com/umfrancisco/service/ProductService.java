@@ -1,0 +1,37 @@
+package com.umfrancisco.service;
+
+import com.umfrancisco.model.Product;
+import com.umfrancisco.repository.ProductRepository;
+import org.springframework.stereotype.Service;
+import java.io.IOException;
+import java.util.List;
+
+@Service
+public class ProductService {
+
+    private ProductRepository repository;
+    
+    public ProductService(ProductRepository repository) {
+    	this.repository = repository;
+    }
+
+    public List<Product> getAllProducts() {
+        return repository.findAll();
+    }
+    
+    public Product getProductById(int id) {
+    	return repository.findById(id).orElse(new Product(-1));
+    }
+    
+    public Product addOrUpdateProduct(Product product) throws IOException {
+    	return repository.save(product);
+    }
+    
+    public void deleteProduct(int id) {
+    	repository.deleteById(id);
+    }
+    
+    public List<Product> searchProducts(String keyword) {
+    	return repository.searchProducts(keyword);
+    }
+}
