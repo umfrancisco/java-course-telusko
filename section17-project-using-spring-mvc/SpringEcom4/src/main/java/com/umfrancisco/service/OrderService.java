@@ -3,6 +3,7 @@ package com.umfrancisco.service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
@@ -74,6 +75,26 @@ public class OrderService {
 	}
 	
 	public List<OrderResponse> getAllOrderResponses() {
-		return null;
+		List<Order> orders = orderRepository.findAll();
+		List<OrderResponse> orderResponses = new ArrayList<>();
+		for (Order order : orders) {
+			
+			List<OrderItemResponse> itemResponses = new ArrayList<>();
+			for (OrderItem item : order.getOrderItems()) {
+				OrderItemResponse orderItemResponse = new OrderItemResponse(
+						item.getProduct().getName(), item.getQuantity(), item.getTotalPrice());
+				itemResponses.add(orderItemResponse);
+			}
+			
+			String orderId = order.getOrderId();
+			String customerName = order.getCustomerName();
+			String email = order.getEmail();
+			String status = order.getStatus();
+			LocalDate orderDate = order.getOrderDate();
+			
+			OrderResponse orderResponse = new OrderResponse(orderId, customerName, email, status, orderDate, itemResponses);
+			orderResponses.add(orderResponse);
+		}
+		return orderResponses;
 	}
 }
