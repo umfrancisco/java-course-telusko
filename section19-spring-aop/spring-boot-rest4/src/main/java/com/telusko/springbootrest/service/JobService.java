@@ -20,7 +20,12 @@ public class JobService {
 		 repo.addJob(jobPost);	
 	}
 
-	public JobPost getJob(int postId) {		
+	public JobPost getJob(int postId) {
+		try {
+			Thread.sleep(800);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return repo.getJob(postId);
 	}
 
