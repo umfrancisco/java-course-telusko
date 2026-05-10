@@ -1,24 +1,6 @@
 
 public class Machine {
 	
-	private int sleepTime;
-	
-	public Machine() {
-		this(0);
-	}
-	
-	public Machine(int sleepTime) {
-		this.sleepTime = sleepTime;
-	}
-	
-	public void sleep() {
-		try {
-			Thread.sleep(sleepTime);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	public String toHexadecimal(int num) {
 		if (num == 0) {
 			return "0";

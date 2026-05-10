@@ -9,11 +9,11 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String greet(HttpServletRequest req) {
-		return ">> "+req.getSession()+" : "+req.getSession().getId();
+		return "hello "+req.getSession()+" "+req.getSession().getId();
 	}
 	
 	@GetMapping("/about")
 	public String about(HttpServletRequest req) {
-		return "about "+req.getSession().getId();
+		return "about "+req.getSession()+" "+req.getSession().getId();
 	}
 }
