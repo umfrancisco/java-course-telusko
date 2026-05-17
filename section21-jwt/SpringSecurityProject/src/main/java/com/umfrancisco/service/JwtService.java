@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -42,4 +43,11 @@ public class JwtService {
 		return Keys.hmacShaKeyFor(keyBytes);
 	}
 	
+	public String extractUserName(String token) {
+		return "";
+	}
+	
+	public boolean validateToken(String token, UserDetails userDetails) {
+		return true;
+	}
 }

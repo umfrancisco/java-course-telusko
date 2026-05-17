@@ -5,5 +5,5 @@ create table users (
 );
 
 insert into users (id, username, password) values
-(1, 'user', '9876'),
-(2, 'admin', '9876543');
+(1123123, 'johnjohn', '9876'),
+(2123123, 'joejoe', '9876543');
