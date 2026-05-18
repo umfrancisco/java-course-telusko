@@ -1,0 +1,14 @@
+/*
+
+	DOCKER
+
+*/
+
+// create image
+docker run -it openjdk:27-ea-trixie bash
+docker commit --change='CMD ["java","-jar","/tmp/DockerDemo.jar"]' quizzical_noyce telusko/docker-demo:v2
+docker run -p 8080:8080 telusko/docker-demo:v2
+
+// build from Dockerfile
+docker build -t telusko/docker-demo:v3
+docker run -p 8080:8080 telusko/docker-demo:v3
