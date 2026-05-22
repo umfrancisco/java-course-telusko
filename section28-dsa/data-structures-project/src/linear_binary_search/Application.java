@@ -1,4 +1,4 @@
-package examples;
+package linear_binary_search;
 
 import java.util.Arrays;
 
