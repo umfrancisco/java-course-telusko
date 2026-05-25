@@ -15,6 +15,14 @@ public class Company {
 		workers = new ArrayList<Worker>();
 	}
 	
+	public double wagesToPay() {
+		double sum = 0;
+		for (int i = 0; i < workers.size(); i++) {
+			sum += workers.get(i).getWage();
+		}
+		return sum;
+	}
+	
 	public void add(int id, String name, String occupation, double wage) {
 		workers.add(new Worker(id, name, occupation, wage));
 	}

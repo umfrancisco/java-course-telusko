@@ -15,6 +15,22 @@ public class Worker {
 		this.wage = wage;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public double getWage() {
+		return wage;
+	}
+
 	@Override
 	public String toString() {
 		return "{id=" + id + ", name=" + name + ", ocupation=" + occupation + ", wage=" + wage + "}";
