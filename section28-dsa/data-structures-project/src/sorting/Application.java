@@ -6,14 +6,14 @@ public class Application {
 	
 	public static void main(String[] args) {
 		int[] arr = {7,2,5,1,8,4,5};
-		Algorithms.bubble_sort(arr);
+		Algorithms.bubbleSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 }
 
 class Algorithms {
 	
-	public static void bubble_sort(int[] arr) {
+	public static void bubbleSort(int[] arr) {
 		int steps = 0;
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length - 1; j++) {
