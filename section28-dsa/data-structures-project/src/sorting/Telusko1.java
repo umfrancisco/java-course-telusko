@@ -2,9 +2,28 @@ package sorting;
 
 import java.util.Arrays;
 
-public class TeluskoResolution {
+// bubble, selection and insertion sort -> O(n^2)
+public class Telusko1 {
 	
-	
+	public static void insertionSort() {
+		int[] arr = {6,5,2,8,9,4};
+		int size = arr.length;
+		System.out.println("Before sorting: "+Arrays.toString(arr));
+		
+		for (int i = 1; i < size; i++) {
+			int key = arr[i];
+			int j = i - 1;
+			
+			while (j >= 0 && arr[j] > key) {
+				arr[j + 1] = arr[j];
+				j--;
+				
+			}
+			arr[j + 1] = key;
+		}
+		
+		System.out.println("After sorting: "+Arrays.toString(arr));
+	}
 	
 	public static void selectionSort() {
 		int[] nums = {6,5,2,8,9,4};
