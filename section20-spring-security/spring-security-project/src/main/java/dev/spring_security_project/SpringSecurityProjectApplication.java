@@ -10,3 +10,5 @@ public class SpringSecurityProjectApplication {
 		SpringApplication.run(SpringSecurityProjectApplication.class, args);
 	}
 }
+
+// TODO: add field role to user class

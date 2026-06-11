@@ -33,7 +33,6 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
 		http.csrf(customizer -> customizer.disable());
 		http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
-//		http.formLogin(Customizer.withDefaults());
 		http.httpBasic(Customizer.withDefaults());
 		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
 		return http.build();
