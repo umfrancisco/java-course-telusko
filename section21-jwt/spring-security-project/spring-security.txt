@@ -1,0 +1,68 @@
+/*
+
+	SPRING SECURITY BASICS
+
+*/
+
+// sample
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringSecurityProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringSecurityProjectApplication.class, args);
+	}
+}
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+	
+	@GetMapping("/")
+	public String hello() {
+		return "hello";
+	}
+	
+}
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.core.userdetails.User;
+import static org.springframework.security.config.Customizer.withDefaults;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+	
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http
+			.authorizeHttpRequests((auth) -> auth
+					.anyRequest().authenticated()
+			)
+			.httpBasic(withDefaults())
+			.formLogin(withDefaults());
+		return http.build();
+	}
+	
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService() {
+		// withDefaultPasswordEncoder() -> will be deprecated, it's not safe for production
+		UserDetails user = User.withDefaultPasswordEncoder()
+				.username("user")
+				.password("1234")
+				.roles("USER")
+				.build();
+		return new InMemoryUserDetailsManager(user);
+	}
+}
