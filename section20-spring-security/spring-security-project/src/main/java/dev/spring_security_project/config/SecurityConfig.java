@@ -32,7 +32,10 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
 		http.csrf(customizer -> customizer.disable());
-		http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
+		http.authorizeHttpRequests(request -> request
+				.requestMatchers("/auth/signup", "/auth/login").permitAll()
+				.anyRequest().authenticated()
+		);
 		http.httpBasic(Customizer.withDefaults());
 		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
 		return http.build();
