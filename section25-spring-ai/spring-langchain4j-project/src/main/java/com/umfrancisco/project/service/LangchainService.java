@@ -3,18 +3,23 @@ package com.umfrancisco.project.service;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
 
 @Service
 public class LangchainService {
+
+	@Value("${api.ollama.ipv4}")
+	public String ipv4;
 	
 	public String run(String prompt) {
 		
+		
 		ChatLanguageModel model = OllamaChatModel.builder()
-				.baseUrl(OllamaConfig.IPv4)
-				.modelName(OllamaConfig.model)
+				.baseUrl(ipv4)
+				.modelName("phi3:mini")
 				.timeout(Duration.ofMinutes(2))
 				.temperature(0.7)
 				.logRequests(true)
