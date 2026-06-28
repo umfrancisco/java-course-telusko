@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.umfrancisco</groupId>
+  <artifactId>ai-project-ollama</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+	<!-- Source: https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-ollama -->
+	<dependency>
+	    <groupId>dev.langchain4j</groupId>
+	    <artifactId>langchain4j-ollama</artifactId>
+	    <version>0.33.0</version>
+	    <scope>compile</scope>
+	</dependency>
+  </dependencies>
+</project>
