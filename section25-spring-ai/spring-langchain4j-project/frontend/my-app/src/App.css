@@ -30,8 +30,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 40px;
-  width: 100%;
-  max-width: 800px;
+  width: 800px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
