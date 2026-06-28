@@ -3,7 +3,6 @@ package com.umfrancisco;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
 
@@ -19,11 +18,15 @@ public class Application {
 				.logResponses(true)
 				.build();
 		
-		String prompt1 = "What is your name?";
-        String prompt2 = "Quote Shakespeare";
+		String p1 = "What is your name?";
+        String p2 = "Quote Rainer Maria Rilke";
+        String p3 = "Quote Rilke in german";
+        String p4 = "Quote Garcia Lorca in spanish";
         
-        chat(model, prompt1);
-        chat(model, prompt2);
+        chat(model, p1);
+        chat(model, p2);
+        chat(model, p3);
+        chat(model, p4);
 	}
 	
 	public static String getDateTime() {
