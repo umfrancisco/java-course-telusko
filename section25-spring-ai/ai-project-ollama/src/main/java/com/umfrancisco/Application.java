@@ -25,17 +25,17 @@ public class Application {
 				.logResponses(true)
 				.build();
 		
-		String p1 = "What is your name?";
-        String p2 = "Quote a sentence from Rainer Maria Rilke";
-        String p3 = "Quote a sentence from Rilke in german";
-        String p4 = "Quote a sentence from Federico Garcia Lorca";
-        String p5 = "Quote a sentence from Federico Garcia Lorca in spanish";
-        
-        chat(model, p1, models[index]);
-        chat(model, p2, models[index]);
-        chat(model, p3, models[index]);
-        chat(model, p4, models[index]);
-        chat(model, p5, models[index]);
+		String[] prompts = {
+				"What is your name?",
+				"Quote a sentence from Rainer Maria Rilke",
+				"Quote a sentence from Rilke in german",
+				"Quote a sentence from Federico Garcia Lorca",
+				"Quote a sentence from Federico Garcia Lorca in spanish"
+		};
+		
+		for (var p : prompts) {
+			chat(model, p, models[index]);	
+		}
 	}
 	
 	public static void chat(ChatLanguageModel model, String prompt, Model m) {
