@@ -13,8 +13,8 @@ public class LangchainService {
 	public String run(String prompt) {
 		
 		ChatLanguageModel model = OllamaChatModel.builder()
-				.baseUrl(Port.IPv4)
-				.modelName("phi3:mini")
+				.baseUrl(OllamaConfig.IPv4)
+				.modelName(OllamaConfig.model)
 				.timeout(Duration.ofMinutes(2))
 				.temperature(0.7)
 				.logRequests(true)
