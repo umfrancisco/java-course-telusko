@@ -1,4 +1,4 @@
-# Java & Spring Boot — Udemy Course
+# Master Java, Spring and Spring Boot, Spring Security, Spring AI, Docker and Microservices with Telusko (Udemy Course)
 
 A collection of exercises, examples, and projects developed while following a Udemy course on **Java, Spring Framework, and Spring Boot**.
 
