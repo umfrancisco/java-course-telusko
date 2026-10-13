@@ -55,13 +55,6 @@ To explore or run the projects locally, you will need:
 - [Apache Maven](https://maven.apache.org/), if not provided through the project's Maven Wrapper.
 - [Docker](https://www.docker.com/), for exercises that use containers.
 
-### Clone the repository
-
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
-
 ## Learning Resources
 
 - [Official Java Documentation](https://docs.oracle.com/en/java/)
@@ -71,7 +64,7 @@ cd <repository-directory>
 - [Spring Security Documentation](https://docs.spring.io/spring-security/reference/)
 - [Docker Documentation](https://docs.docker.com/)
 
-## 📝 About This Repository
+## About This Repository
 
 This is an **educational repository** containing exercises and projects developed while following a Udemy course. The implementations are intended to reinforce the concepts taught in the lessons and provide practical experience with Java and the Spring ecosystem.
 
